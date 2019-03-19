@@ -1,5 +1,5 @@
 import express from 'express'
-import {IndexController, UsersController} from './controllers/Controllers';
+import {IndexController, UsersController} from './controllers/Controllers'
 import {CreateUsersTable} from './database/DbOperations'
 
 //Setup
