@@ -1,0 +1,24 @@
+Register with:
+
+{
+  "email": "example@mail.com",
+  "name": "testuser",
+  "password": "testpass"
+}
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"email":"examplet@mail.com","name":"testuser","password":"testpass"}' \
+  http://localhost:3002/user/register
+___________________________________________________________________________________________________
+Log in with:
+
+{
+    "email":"examplet@mail.com",
+    "password":"testpass"
+}
+
+curl --header "Content-Type: application/json" \
+    --request POST   
+    --data '{"email":"examplet@mail.com","password":"testpass"}' \
+    http://localhost:3002/user/login
