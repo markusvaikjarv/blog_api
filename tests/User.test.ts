@@ -1,6 +1,9 @@
 import app from "../src/app";
 const request = require("supertest"); // needs to be CommonJS import, for whatever reason
 
+
+
+
 describe("/user - endpoint for register and login", () => {
 
   it("GET /user API Request", async () => {
@@ -69,3 +72,4 @@ describe("/user - endpoint for register and login", () => {
                           .expect(404)
   })
 })
+

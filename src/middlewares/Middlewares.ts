@@ -1,0 +1,1 @@
+export * from './Authorize' // exports Auth(req: Request, res: Response, next: any)

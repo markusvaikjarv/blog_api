@@ -3,8 +3,8 @@ import {CreateUser, FindUserByEmail} from '../database/DbOperations' //Database 
 import * as jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcryptjs'
 import * as bodyParser from 'body-parser'
+import {JWT_SECRET, expiresIn, JWTopts} from '../jwt/JWTStrategy'
 
-const JWT_SECRET = "secretkeyforjwt123"
 
 
 const router: Router = Router();
@@ -12,6 +12,7 @@ const router: Router = Router();
 //  "/User/..." accepts JSON. Body-parser converts request body to JSON
 router.use(bodyParser.urlencoded({ extended:  false }));
 router.use(bodyParser.json());
+
 
 router.post('/register', (req: Request, res: Response) => {
 
@@ -45,18 +46,18 @@ router.post('/login', (req, res) => {
         const  result  =  bcrypt.compareSync(password, user.password)
         if(!result) return  res.status(401).send('Entered password is wrong')
 
-        const  expiresIn  =  24  *  60  *  60;
-        const  accessToken  =  jwt.sign({ id:  user.id }, JWT_SECRET, {
-            expiresIn:  expiresIn
-        })
+
+        const  accessToken  =  jwt.sign({ id:  user.id }, JWT_SECRET, JWTopts) 
 
         res.status(200).send({ "user":  user, "access_token":  accessToken, "expires_in":  expiresIn})
     })
 })
 
+
+
 router.get('/', (req: Request, res: Response) => {
     res.send('/register to register or /login to log in');
 })
 
-export const UsersController: Router = router;
+export const UsersController: Router = router
 

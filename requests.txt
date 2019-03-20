@@ -18,6 +18,7 @@ Log in with:
     "password":"testpass"
 }
 
+
 curl --header "Content-Type: application/json" \
     --request POST   
     --data '{"email":"examplet@mail.com","password":"testpass"}' \
