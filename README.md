@@ -6,9 +6,9 @@ Blogging REST API with JWT-based authentication system in TypeScript. Uses *Expr
 Currently implemented:
 -
 - Creating an account (/user/register)
-- Logging in and responding with an access_token in 
+- Logging in and responding with an access_token 
 - Secure routes that require authorization (/create/posts)
-- Authorization middleware that verifies and decodes the token, extraxts information from JWT payload
+- Authorization middleware that verifies and decodes the token, extracts information from JWT payload
 - Integration tests
 - Configured to run with TypeScript and compile code/restart Node at every save
 
